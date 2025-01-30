@@ -37,19 +37,19 @@ document.getElementById('compare-button').addEventListener('click', () => {
     const slowa = text.split(/\s+/); // Rozdziel na słowa
     const ciagi = [];
     for (let i = 0; i <= slowa.length - n; i++) {
-      ciagi.push(slowa.slice(i, i + n).join(' ')); // Połącz n kolejnych słów
+      ciagi.push(slowa.slice(i, i + n).join(' ')); 
     }
     return ciagi;
   }
 
   // Generuj pary słów (2-gramy)
-  const nGrams1 = generujCiagiWyrazow(text1, ILOSC_WYRAZOW_W_CIAGU);
-  const nGrams2 = generujCiagiWyrazow(text2, ILOSC_WYRAZOW_W_CIAGU);
+  const ciagiWyrazow1 = generujCiagiWyrazow(text1, ILOSC_WYRAZOW_W_CIAGU);
+  const ciagiWyrazow2 = generujCiagiWyrazow(text2, ILOSC_WYRAZOW_W_CIAGU);
   
 
   // Sprawdź powtarzające się n-gramy
-  nGrams1.forEach(phrase => {
-    if (nGrams2.includes(phrase) && !powtorzoneFrazy.includes(phrase)) {
+  ciagiWyrazow1.forEach(phrase => {
+    if (ciagiWyrazow2.includes(phrase) && !powtorzoneFrazy.includes(phrase)) {
       powtorzoneFrazy.push(phrase);
     }
   });
