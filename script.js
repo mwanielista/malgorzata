@@ -18,7 +18,7 @@ textArea2.addEventListener("mouseleave", () => {
 // Porównywarka Tekstów
 document.getElementById('compare-button').addEventListener('click', () => {
 
-  N_GRAM_SIZE = 3;  //zmieniasz se ile kolejnych slow powtarzajacych ma szukac
+  ILOSC_WYRAZOW_W_CIAGU = 3;  //zmieniasz se ile kolejnych slow powtarzajacych ma szukac
 
   const text1 = document.getElementById('text1').value.trim();
   const text2 = document.getElementById('text2').value.trim();
@@ -33,7 +33,7 @@ document.getElementById('compare-button').addEventListener('click', () => {
   const powtorzoneFrazy = [];
   
   // Funkcja do generowania n-gramów (ciągów dwóch słów)
-  function generateNGrams(text, n = N_GRAM_SIZE) {
+  function generateNGrams(text, n = ILOSC_WYRAZOW_W_CIAGU) {
     const words = text.split(/\s+/); // Rozdziel na słowa
     const nGrams = [];
     for (let i = 0; i <= words.length - n; i++) {
@@ -43,8 +43,8 @@ document.getElementById('compare-button').addEventListener('click', () => {
   }
 
   // Generuj pary słów (2-gramy)
-  const nGrams1 = generateNGrams(text1, N_GRAM_SIZE);
-  const nGrams2 = generateNGrams(text2, N_GRAM_SIZE);
+  const nGrams1 = generateNGrams(text1, ILOSC_WYRAZOW_W_CIAGU);
+  const nGrams2 = generateNGrams(text2, ILOSC_WYRAZOW_W_CIAGU);
   
 
   // Sprawdź powtarzające się n-gramy
