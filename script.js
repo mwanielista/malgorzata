@@ -58,10 +58,10 @@ document.getElementById('compare-button').addEventListener('click', () => {
   let highlightedText1 = text1;
   let highlightedText2 = text2;
   
-  powtorzoneFrazy.forEach(phrase => {
-    const regex = new RegExp(phrase, 'gi');
-    highlightedText1 = highlightedText1.replace(regex, `<mark>${phrase}</mark>`);
-    highlightedText2 = highlightedText2.replace(regex, `<mark>${phrase}</mark>`);
+  powtorzoneFrazy.forEach(fraza => {
+    const regex = new RegExp(fraza, 'gi');
+    highlightedText1 = highlightedText1.replace(regex, `<mark>${fraza}</mark>`);
+    highlightedText2 = highlightedText2.replace(regex, `<mark>${fraza}</mark>`);
   });
 
   // Wyświetl wynik
