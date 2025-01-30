@@ -34,10 +34,10 @@ document.getElementById('compare-button').addEventListener('click', () => {
   
   // Funkcja do generowania n-gramów (ciągów dwóch słów)
   function generateNGrams(text, n = ILOSC_WYRAZOW_W_CIAGU) {
-    const words = text.split(/\s+/); // Rozdziel na słowa
+    const slowa = text.split(/\s+/); // Rozdziel na słowa
     const nGrams = [];
-    for (let i = 0; i <= words.length - n; i++) {
-      nGrams.push(words.slice(i, i + n).join(' ')); // Połącz n kolejnych słów
+    for (let i = 0; i <= slowa.length - n; i++) {
+      nGrams.push(slowa.slice(i, i + n).join(' ')); // Połącz n kolejnych słów
     }
     return nGrams;
   }
