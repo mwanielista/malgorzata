@@ -18,7 +18,7 @@ textArea2.addEventListener("mouseleave", () => {
 // Porównywarka Tekstów
 document.getElementById('compare-button').addEventListener('click', () => {
 
-  ILOSC_WYRAZOW_W_CIAGU = 3;  //zmieniasz se ile kolejnych slow powtarzajacych ma szukac
+  ILOSC_WYRAZOW_W_CIAGU = 2;  //zmieniasz se ile kolejnych slow powtarzajacych ma szukac
 
   const text1 = document.getElementById('text1').value.trim();
   const text2 = document.getElementById('text2').value.trim();
@@ -37,7 +37,7 @@ document.getElementById('compare-button').addEventListener('click', () => {
     const slowa = text.split(/\s+/); // Rozdziel na słowa
     const ciagi = [];
     for (let i = 0; i <= slowa.length - n; i++) {
-      ciagi.push(slowa.slice(i, i + n).join(' ')); 
+      ciagi.push(slowa.slice(i, i + n).join(' ').toLowerCase()); 
     }
     return ciagi;
   }
@@ -53,13 +53,13 @@ document.getElementById('compare-button').addEventListener('click', () => {
       powtorzoneFrazy.push(fraza);
     }
   }
-  
+    
   // Podświetlanie powtarzających się n-gramów
   let highlightedText1 = text1;
   let highlightedText2 = text2;
   
   powtorzoneFrazy.forEach(phrase => {
-    const regex = new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    const regex = new RegExp(phrase, 'gi');
     highlightedText1 = highlightedText1.replace(regex, `<mark>${phrase}</mark>`);
     highlightedText2 = highlightedText2.replace(regex, `<mark>${phrase}</mark>`);
   });
