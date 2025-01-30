@@ -48,12 +48,12 @@ document.getElementById('compare-button').addEventListener('click', () => {
   
 
   // Sprawdź powtarzające się n-gramy
-  ciagiWyrazow1.forEach(phrase => {
-    if (ciagiWyrazow2.includes(phrase) && !powtorzoneFrazy.includes(phrase)) {
-      powtorzoneFrazy.push(phrase);
+  for (const fraza of ciagiWyrazow1) {
+    if (ciagiWyrazow2.includes(fraza) && !powtorzoneFrazy.includes(fraza)) {
+      powtorzoneFrazy.push(fraza);
     }
-  });
-
+  }
+  
   // Podświetlanie powtarzających się n-gramów
   let highlightedText1 = text1;
   let highlightedText2 = text2;
