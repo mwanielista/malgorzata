@@ -33,18 +33,18 @@ document.getElementById('compare-button').addEventListener('click', () => {
   const powtorzoneFrazy = [];
   
   // Funkcja do generowania n-gramów (ciągów dwóch słów)
-  function generateNGrams(text, n = ILOSC_WYRAZOW_W_CIAGU) {
+  function generujCiagiWyrazow(text, n = ILOSC_WYRAZOW_W_CIAGU) {
     const slowa = text.split(/\s+/); // Rozdziel na słowa
-    const nGrams = [];
+    const ciagi = [];
     for (let i = 0; i <= slowa.length - n; i++) {
-      nGrams.push(slowa.slice(i, i + n).join(' ')); // Połącz n kolejnych słów
+      ciagi.push(slowa.slice(i, i + n).join(' ')); // Połącz n kolejnych słów
     }
-    return nGrams;
+    return ciagi;
   }
 
   // Generuj pary słów (2-gramy)
-  const nGrams1 = generateNGrams(text1, ILOSC_WYRAZOW_W_CIAGU);
-  const nGrams2 = generateNGrams(text2, ILOSC_WYRAZOW_W_CIAGU);
+  const nGrams1 = generujCiagiWyrazow(text1, ILOSC_WYRAZOW_W_CIAGU);
+  const nGrams2 = generujCiagiWyrazow(text2, ILOSC_WYRAZOW_W_CIAGU);
   
 
   // Sprawdź powtarzające się n-gramy
