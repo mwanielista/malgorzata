@@ -1,7 +1,3 @@
-const tabs = document.querySelectorAll('.tab');
-const contents = document.querySelectorAll('.content');
-
-
 const textArea = document.getElementById("text1");
 textArea.addEventListener("mouseenter", () => {
   textArea.classList.add("active");
