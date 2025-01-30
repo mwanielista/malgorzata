@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narzędzie do Analizy Tekstu</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>Narzędzie do Analizy Tekstu</h1>
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" data-tab="compare">Porównaj Teksty</div>
+      <div class="tab" data-tab="search">Wyszukaj w Tekście</div>
+    </div>
+
+    <div id="compare" class="content active">
+      <h2>Porównywarka Tekstów</h2>
+      <form id="compare-form">
+        <textarea id="text1" placeholder="Wprowadź tekst 1"></textarea>
+        <textarea id="text2" placeholder="Wprowadź tekst 2"></textarea>
+        <button type="button" id="compare-button">Porównaj</button>
+      </form>
+      <div id="compare-result" class="result"></div>
+    </div>
+
+    <div id="search" class="content">
+      <h2>Wyszukaj w Tekście</h2>
+      <textarea id="textInput" placeholder="Wprowadź tekst..."></textarea>
+      <input type="text" id="patternInput" placeholder="Wyszukaj frazę">
+      <div id="search-result" class="result"></div>
+      <div id="search-count">Znaleziono wyników: 0</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

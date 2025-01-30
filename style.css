@@ -1,0 +1,75 @@
+body { 
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+textarea, input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Stylowanie dla <mark> */
+mark {
+  background-color: lightblue;
+  color: black;
+  font-weight: bold;
+}
